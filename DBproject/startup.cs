@@ -60,6 +60,24 @@ namespace DBproject
 
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CarsReport form = new CarsReport();
+            form.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            CustomerReport form = new CustomerReport();
+            form.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            GuestRep form = new GuestRep();
+            form.Show();
+        }
+
  
     }
 }

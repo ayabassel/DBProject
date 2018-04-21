@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DBproject</RootNamespace>
     <AssemblyName>DBproject</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,12 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\app\Aya-pc\product\11.2.0\dbhome_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,17 +68,47 @@
     <Compile Include="Card_details.Designer.cs">
       <DependentUpon>Card_details.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customers.cs">
+    <Compile Include="CarsReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Customers.Designer.cs">
-      <DependentUpon>Customers.cs</DependentUpon>
+    <Compile Include="CarsReport.Designer.cs">
+      <DependentUpon>CarsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerReport.Designer.cs">
+      <DependentUpon>CustomerReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport5.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="EXPENDITURES.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EXPENDITURES.Designer.cs">
       <DependentUpon>EXPENDITURES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuestRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestRep.Designer.cs">
+      <DependentUpon>GuestRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuestReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuestReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reservation.cs">
       <SubType>Form</SubType>
@@ -98,11 +136,29 @@
     <EmbeddedResource Include="Card_details.resx">
       <DependentUpon>Card_details.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customers.resx">
-      <DependentUpon>Customers.cs</DependentUpon>
+    <EmbeddedResource Include="CarsReport.resx">
+      <DependentUpon>CarsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerReport.resx">
+      <DependentUpon>CustomerReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport5.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="EXPENDITURES.resx">
       <DependentUpon>EXPENDITURES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuestRep.resx">
+      <DependentUpon>GuestRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuestReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GuestReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
@@ -115,6 +171,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Revenues.resx">
       <DependentUpon>Revenues.cs</DependentUpon>
@@ -134,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
